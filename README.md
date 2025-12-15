@@ -1,16 +1,128 @@
-# React + Vite
+# ☕ Coffee + Snacks eCommerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **frontend-only eCommerce web application** built using **React, Tailwind CSS, Context API, and React Router**.
+The app supports **Admin & User roles**, product management, cart, checkout, and order management — all handled using **LocalStorage** (no backend).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Features
 
-## React Compiler
+### 👤 Authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* User Registration & Login
+* Role-based access (Admin / User)
+* Persistent login using LocalStorage
 
-## Expanding the ESLint configuration
+### 🛍️ Products
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Admin can **Add / Edit / Delete products**
+* Users can **View & Search products**
+* Category-based filtering
+
+### 🛒 Cart
+
+* Add / Remove products
+* Quantity control
+* Cart badge count
+* Cart data saved in LocalStorage
+
+### 💳 Checkout
+
+* Address & payment selection (COD / UPI)
+* Order summary
+* Total price calculation
+
+### 📦 Orders
+
+* Users can view **their own orders**
+* Admin can view **all orders**
+* Admin can **delete orders**
+* Order status system (Pending / Delivered)
+
+### 🌙 UI / UX
+
+* Light & Dark theme toggle
+* Responsive layout (Desktop & Mobile)
+* Toast notifications
+
+
+---
+
+## 🧠 Concepts Used
+
+* React Functional Components
+* React Hooks (`useState`, `useEffect`, `useContext`)
+* Context API (Global State Management)
+* React Router v6 (Protected & Admin Routes)
+* Tailwind CSS (Utility-first styling)
+* Role-Based Access Control
+* LocalStorage Persistence
+
+---
+
+## 🧱 Project Structure
+
+```
+src/
+├── Components/
+│   ├── Navbar.jsx
+│   ├── Card.jsx
+│   ├── ProtectedRoute.jsx
+│   └── AdminPath.jsx
+├── Context/
+│   ├── UserContext.jsx
+│   ├── ProductContext.jsx
+│   ├── CartContext.jsx
+│   ├── OrderContext.jsx
+│   └── ThemeContext.jsx
+├── Pages/
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── ListPage.jsx
+│   ├── CartPage.jsx
+│   ├── Checkout.jsx
+│   ├── Orders.jsx
+│   ├── AdminDashboard.jsx
+│   └── AddProduct.jsx
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🔐 Admin Access
+
+> Admin users have special permissions:
+
+* Access Admin Dashboard
+* Add / Edit / Delete products
+* View & manage all orders
+
+Admin check is handled using:
+
+```js
+user?.isAdmin
+```
+
+---
+
+
+
+## 📌 Future Improvements
+
+* Pagination for products
+* Payment gateway integration
+* Admin order status updates UI
+* Image upload instead of URL
+* Backend integration (Node + MongoDB)
+
+---
+
+## 🏆 Author
+
+Developed by **[Arunima . S]**
+Frontend Developer | React | Tailwind | JavaScript
+
+---
+
+
