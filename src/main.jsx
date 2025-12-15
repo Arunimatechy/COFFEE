@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")).render(
       <UserProvider>
         <ProductProvider>
           <ThemeProvider>
-            <OrderProvider>
+            <OrderProvider> 
               <App />
             </OrderProvider>
           </ThemeProvider>

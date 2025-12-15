@@ -1,149 +1,61 @@
-// import React from "react";
-// import { Routes, Route } from "react-router-dom";
-// import Navbar from "./Components/Navbar.jsx";
-// import Login from "./Pages/Login.jsx";
-// import Register from "./Pages/Register.jsx";
-// import ListPage from "./Pages/ListPage.jsx";
-// import AddProduct from "./Pages/AddProduct.jsx";
-// import AdminDashboard from "./Pages/AdminDashboard.jsx";
-// import ProtectedRoute from "./Components/ProtectedRoute.jsx";
-// import AdminPath from "./Components/AdminPath.jsx";
-// import { Toaster } from "react-hot-toast";
-// import CartPage from "./Pages/CartPage.jsx";
-// import Checkout from "./Pages/Checkout";
-// import OrderSuccess from "./Pages/OrderSuccess";
-// import Orders from "./Pages/Orders.jsx";
-
-// const App = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <Toaster />
-//       <Routes>
-//         <Route
-//           path="/"
-//           element={
-//               <ListPage />
-//           }
-//         />
-//         <Route
-//           path="/add"
-//           element={
-//             <ProtectedRoute>
-//               <AddProduct />
-//             </ProtectedRoute>
-//           }
-//         />
-//         <Route
-//           path="/admin"
-//           element={
-//             <AdminPath>
-//               <AdminDashboard />
-//             </AdminPath>
-//           }
-//         />
-
-       
-
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/register" element={<Register />} />
-//         <Route path="/cart" element={<CartPage/>}/>
-//         <Route path="/checkout" element={<Checkout />} />
-//         <Route path="/success" element={<OrderSuccess />} />
-// <Route path="/orders" element={<Orders />} />
-//       </Routes>
-//     </>
-//   );
-// };
-
-// export default App;
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar.jsx";
-import Login from "./Pages/Login.jsx";
-import Register from "./Pages/Register.jsx";
-import ListPage from "./Pages/ListPage.jsx";
-import AddProduct from "./Pages/AddProduct.jsx";
-import AdminDashboard from "./Pages/AdminDashboard.jsx";
-import ProtectedRoute from "./Components/ProtectedRoute.jsx";
-import AdminPath from "./Components/AdminPath.jsx";
+import Navbar from "./Components/Navbar";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import ListPage from "./Pages/ListPage";
+import AddProduct from "./Pages/AddProduct";
+import AdminDashboard from "./Pages/AdminDashboard";
+import ProtectedRoute from "./Components/ProtectedRoute";
+import AdminPath from "./Components/AdminPath";
+import CartPage from "./Pages/CartPage";
+import Checkout from "./Pages/Checkout";
+import OrderSuccess from "./Pages/OrderSuccess";
+import Orders from "./Pages/Orders";
 import { Toaster } from "react-hot-toast";
-import CartPage from "./Pages/CartPage.jsx";
-import Checkout from "./Pages/Checkout.jsx";
-import OrderSuccess from "./Pages/OrderSuccess.jsx";
-import Orders from "./Pages/Orders.jsx";
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Toaster />
+
       <Routes>
-        {/* PUBLIC ROUTES */}
+        {/* PUBLIC */}
         <Route path="/" element={<ListPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* PROTECTED ROUTES */}
-        <Route
-          path="/add"
-          element={
-            <ProtectedRoute>
-              <AddProduct />
-            </ProtectedRoute>
-          }
-        />
+        {/* PROTECTED */}
         <Route
           path="/cart"
-          element={
-            <ProtectedRoute>
-              <CartPage />
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute><CartPage /></ProtectedRoute>}
         />
         <Route
           path="/checkout"
-          element={
-            <ProtectedRoute>
-              <Checkout />
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute><Checkout /></ProtectedRoute>}
         />
         <Route
           path="/success"
-          element={
-            <ProtectedRoute>
-              <OrderSuccess />
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute><OrderSuccess /></ProtectedRoute>}
         />
-
-        {/* ORDERS */}
         <Route
           path="/orders"
-          element={
-            <ProtectedRoute>
-              <Orders />
-            </ProtectedRoute>
-          }
+          element={<ProtectedRoute><Orders /></ProtectedRoute>}
         />
 
-        {/* ADMIN ROUTES */}
+        {/* ADMIN */}
         <Route
           path="/admin"
-          element={
-            <AdminPath>
-              <AdminDashboard />
-            </AdminPath>
-          }
+          element={<AdminPath><AdminDashboard /></AdminPath>}
+        />
+        <Route
+          path="/admin/add"
+          element={<AdminPath><AddProduct /></AdminPath>}
         />
         <Route
           path="/admin/orders"
-          element={
-            <AdminPath>
-              <Orders />
-            </AdminPath>
-          }
+          element={<AdminPath><Orders /></AdminPath>}
         />
       </Routes>
     </>
@@ -151,3 +63,5 @@ const App = () => {
 };
 
 export default App;
+
+

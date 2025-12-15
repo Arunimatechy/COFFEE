@@ -1,4 +1,3 @@
-
 import { createContext, useEffect, useState } from "react";
 
 export const OrderContext = createContext();
@@ -12,14 +11,13 @@ export const OrderProvider = ({ children }) => {
     localStorage.setItem("orders", JSON.stringify(orders));
   }, [orders]);
 
-  // ✅ Add new order
   const addOrder = (order) => {
     setOrders([...orders, order]);
   };
 
-  // ✅ Delete order by id
+  // ✅ ADMIN DELETE ORDER
   const deleteOrder = (id) => {
-    setOrders((prevOrders) => prevOrders.filter((order) => order.id !== id));
+    setOrders(orders.filter((order) => order.id !== id));
   };
 
   return (
