@@ -33,7 +33,7 @@ const Card = ({ product }) => {
     setIsEditing(false);
   };
 
-  // Handle Add to Cart with login check
+  // Add to Cart with login check
   const handleAddToCart = () => {
     if (!user) {
       alert("Please login to add to cart");
@@ -147,7 +147,7 @@ const Card = ({ product }) => {
               </button>
             </div>
           ) : (
-            // User view: Add to cart with login check
+            
             qty > 0 ? (
               <div className="flex gap-3 justify-center items-center">
                 <button

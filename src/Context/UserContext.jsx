@@ -25,7 +25,7 @@ const { clearCart } = useContext(CartContext);
 
   const logout = () => {
     setUser(null);
-     clearCart(); // ✅ CART CLEARED
+     clearCart(); 
     navigate("/");
     toast.success("Logged out");
   };

@@ -21,12 +21,12 @@ const App = () => {
       <Toaster />
 
       <Routes>
-        {/* PUBLIC */}
+      
         <Route path="/" element={<ListPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* PROTECTED */}
+     
         <Route
           path="/cart"
           element={<ProtectedRoute><CartPage /></ProtectedRoute>}
@@ -44,7 +44,7 @@ const App = () => {
           element={<ProtectedRoute><Orders /></ProtectedRoute>}
         />
 
-        {/* ADMIN */}
+      
         <Route
           path="/admin"
           element={<AdminPath><AdminDashboard /></AdminPath>}

@@ -1,17 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useContext } from "react";
 import { UserContext } from "../Context/UserContext.jsx";
 import { ThemeContext } from "../Context/ThemeContext.jsx";
@@ -32,7 +19,7 @@ const Navbar = () => {
         Themes ? "bg-cyan-950 text-amber-50" : "bg-white text-gray-800"
       }`}
     >
-      {/* LOGO */}
+     
       <div
         className={`font-serif text-xl md:text-2xl font-bold transition ${
           Themes
@@ -43,9 +30,9 @@ const Navbar = () => {
         Coffee + Snacks
       </div>
 
-      {/* RIGHT SIDE */}
+     
       <div className="flex gap-4 md:gap-6 items-center font-semibold flex-wrap md:flex-nowrap">
-        {/* DASHBOARD */}
+      
         <Link
           to="/"
           className={`${Themes ? "text-amber-50" : "text-gray-700"} hover:text-[#8B4513] transition hidden md:block`}
@@ -53,7 +40,6 @@ const Navbar = () => {
           Dashboard
         </Link>
 
-        {/* ADMIN */}
         {user?.isAdmin && (
           <>
             <Link
@@ -71,7 +57,7 @@ const Navbar = () => {
           </>
         )}
 
-        {/* USER ORDERS */}
+      
         {user && !user.isAdmin && (
           <Link
             to="/orders"
@@ -81,7 +67,7 @@ const Navbar = () => {
           </Link>
         )}
 
-        {/* USER SECTION */}
+      
         {user ? (
           <>
             <div
@@ -101,7 +87,7 @@ const Navbar = () => {
               </span>
             </div>
 
-            {/* LOGOUT */}
+          
             <button
               onClick={logout}
               className="bg-red-500 hover:bg-red-600 text-white px-3 md:px-4 py-2 rounded-lg font-semibold transition"
@@ -111,7 +97,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            {/* LOGIN */}
+       
             <Link
               to="/login"
               className="bg-blue-500 hover:bg-blue-600 text-white px-3 md:px-4 py-2 rounded-lg font-semibold transition"
@@ -119,7 +105,7 @@ const Navbar = () => {
               Login
             </Link>
 
-            {/* REGISTER */}
+        
             <Link
               to="/register"
               className="bg-green-500 hover:bg-green-600 text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 transition"
@@ -129,7 +115,7 @@ const Navbar = () => {
           </>
         )}
 
-        {/* CART */}
+     
         <Link
           to="/cart"
           className="relative rounded-xl p-2 md:p-3 flex justify-center items-center"
@@ -145,7 +131,7 @@ const Navbar = () => {
           )}
         </Link>
 
-        {/* THEME BUTTON */}
+       
         <button
           onClick={toggleTheme}
           className={`px-3 md:px-4 py-2 rounded-lg font-semibold border flex items-center gap-2 ${

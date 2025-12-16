@@ -15,7 +15,7 @@ export const OrderProvider = ({ children }) => {
     setOrders([...orders, order]);
   };
 
-  // ✅ ADMIN DELETE ORDER
+
   const deleteOrder = (id) => {
     setOrders(orders.filter((order) => order.id !== id));
   };
